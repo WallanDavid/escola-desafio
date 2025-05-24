@@ -1,23 +1,63 @@
-# Projeto Escola - Desafio Técnico
+# Desafio Técnico - Gerenciamento de Horários da Escola
 
-Este projeto contém a modelagem de banco de dados e consultas SQL para o desafio técnico da vaga Java Pleno/Sênior.
+Este projeto implementa o banco de dados para uma escola fictícia com o objetivo de:
 
-## Conteúdo
+- Gerenciar departamentos, professores, títulos e disciplinas (matérias).
+- Controlar turmas, horários e salas.
+- Permitir consultas para saber a quantidade de horas que cada professor tem comprometido em aulas.
+- Listar horários livres e ocupados de salas.
 
-- Script `escola.sql` com criação das tabelas, inserção dos dados e consultas.
-- Consultas para:
-  - Calcular a quantidade de horas que cada professor tem comprometido em aulas.
-  - Listar as salas com horários livres e ocupados, considerando o funcionamento da escola das 08:00 às 18:00, de segunda a sexta.
+---
 
-## Como executar
+## Estrutura do Banco
 
-1. Instale o PostgreSQL e o pgAdmin (ou use outra ferramenta de sua preferência).
-2. Crie um banco de dados chamado `escola`.
-3. Importe o arquivo `escola.sql` para dentro do banco (pode rodar o script no pgAdmin).
-4. Verifique os resultados das consultas SQL no final do script.
+O banco contém as seguintes tabelas:
 
-## Sobre
+- **building**: Prédios da escola.
+- **room**: Salas dentro dos prédios.
+- **department**: Departamentos acadêmicos.
+- **title**: Títulos acadêmicos dos professores.
+- **professor**: Professores e seus dados.
+- **subject**: Disciplinas da escola.
+- **subject_prerequisite**: Pré-requisitos entre disciplinas.
+- **class**: Turmas vinculadas a professores e disciplinas.
+- **class_schedule**: Horários das turmas em salas.
 
-Autor: Wallan David Peixoto  
-Contato: bobwallan2@gmail.com
+---
 
+## Scripts SQL
+
+O arquivo `escola.sql` contém:
+
+- Comandos para criar as tabelas (caso não existam, remove as antigas).
+- Inserção dos dados iniciais de exemplo.
+- Duas consultas importantes:
+
+  1. Quantidade de horas que cada professor tem comprometido em aulas.
+  2. Lista das salas com horários livres e ocupados, considerando o funcionamento da escola das 08:00 às 17:00 de segunda a sexta.
+
+---
+
+## Como rodar
+
+1. Instale e configure o PostgreSQL e pgAdmin.
+2. Crie um banco de dados novo (ex: `escola_desafio`).
+3. No pgAdmin, abra o Query Tool e copie todo o conteúdo do arquivo `escola.sql`.
+4. Execute o script para criar tabelas, popular dados e executar as consultas.
+5. Verifique os resultados nas abas de saída do pgAdmin.
+
+---
+
+## Observações
+
+- Os horários livres consideram intervalos de 1 hora entre 08:00 e 17:00.
+- Você pode ajustar os dados no arquivo `escola.sql` para incluir mais professores, turmas e horários.
+- O projeto foi feito para fins educacionais e para o desafio técnico solicitado.
+
+---
+
+## Contato
+
+Qualquer dúvida, entre em contato comigo.
+
+Wallan David Peixoto - bobwallan2@gmail.com
